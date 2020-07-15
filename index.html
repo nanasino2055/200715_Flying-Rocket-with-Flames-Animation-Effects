@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous"> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> -->
+    <title>webサイト制作テンプレート</title>
+  </head>
+  <body>
+    <div class="scene">
+      <div class="rocket">
+        <img src="rocket.png" alt="">
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      function stars() {
+        let count = 20; //繰り返し回数を指定
+        let scene = document.querySelector('.scene'); //.sceneを代入
+        let i = 0; //繰り返し回数の始まりを指定
+        while(i < count){ //0~19の20回繰り返す
+          let star = document.createElement('i'); //HTMLにi要素を生成する。
+          let x = Math.floor(Math.random() * window.innerWidth); //画面幅を参照して乱数を発生させる。
+
+          let duration = Math.random() * 1; //小数点以下の乱数を発生させる。*1の意味は不明
+          let h = Math.random() * 100;// 0~99までの乱数を発生させる。
+
+          star.style.left = x + 'px';//
+          star.style.width = 1 + 'px';//
+          star.style.height = 50 + h + 'px';//
+          star.style.animationDuration = duration + 's';//
+
+          scene.appendChild(star); //.sceneの子要素にi要素を加える
+          i++ //1加算して返す
+        }
+      }
+      stars(); //HTML上に出力
+    </script>
+  </body>
+</html>
+
+<!--
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ -->
